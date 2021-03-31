@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+:root {
+  --background-color: hsl(210, 46%, 95%);
+
+  --font-strong-color: hsl(217, 19%, 35%);
+  --secondary-color: hsl(214, 17%, 51%);
+  --third-color: hsl(212, 23%, 69%);
+
+}
+
+* {
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Manrope', sans-serif;
+
+}
+
+body {
+  background-color: var(--background-color);
+
+  min-height: 70vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px 20px;
+
+  overflow: none;
+
+}
+
+
+#componentContainer {
+  background-color: white;
+
+  min-width: 250px;
+  width: 90%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+}
+
+.image-component {
+  width: 100%;
+  height: 220px;
+
+  object-fit: cover;
+  object-position: 50% 50%;
+
+  border-radius: 12px 12px 0px 0px;
+
+  margin-bottom: 20px;
+
+}
+
+.textContainer {
+  background-color: white;
+
+
+  border-radius: 12px;
+
+  padding: 20px 40px 5px;
+
+  position: relative;
+    
+}
+
+.title {
+  color: var(--font-strong-color);
+  font-size: 1.15rem;
+  font-weight: 700;
+
+  margin-bottom: 15px;
+
+}
+
+.subtitle {
+  color: var(--secondary-color);
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+
+  margin-bottom: 20px;
+
+}
+
+.person {
+  background-color: white;
+
+  width: 100%;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+
+  border-radius: 12px;
+
+  padding: 10px 20px 20px;
+
+}
+
+.person .infoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.person .infoContainer.hidden {
+  display: none;
+
+}
+
+.infoContainer .person-image {
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+
+  margin-right: 20px;
+
+}
+
+section .name {
+  color: var(--font-strong-color);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.03rem;
+
+  margin-bottom: 5px;
+
+}
+
+section .date {
+  color: var(--third-color);
+  font-size: 0.90rem;
+  font-weight: 500;
+  letter-spacing: 0.04rem;
+
+}
+
+.infoContainer section {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.person .share-btn {
+  background-color: var(--background-color);
+
+  width: 35px;
+  height: 35px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+  user-select: none;
+  -moz-user-select: none;
+
+  transition: background 0.3s, color 0.3s;
+
+}
+
+.person .share-image {
+  width: 18px;
+  height: 18px;
+
+}
+
+.person .shareContainer.hidden {
+  visibility: hidden;
+
+  cursor: pointer;
+  
+  transition: background 0.3;
+
+}
+
+.person .shareContainer {
+  background-color: var(--font-strong-color);
+
+  width: 100%;
+  height: 70px;
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding: 0px 40px;
+
+  border-radius: 0px 0px 12px 12px;
+
+  z-index: 1;
+
+}
+
+.shareContainer h2 {
+  color: var(--third-color);
+  font-size: 4vmin;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.20rem;
+
+  margin-right: 15px;
+
+}
+
+.shareContainer .social-medias {
+  width: 20px;
+  height: 20px;
+
+  margin-right: 15px;
+
+  cursor: pointer;
+
+  user-select: none;
+  -moz-user-select: none;
+
+}
+
+.person.active {
+  width: 100%;
+  height: 70px;
+  
+  padding: 0 20px 10px;
+
+}
+
+.person.active .infoContainer {
+  opacity: 0;
+
+}
+
+.person.active .share-btn {
+  background-color: var(--secondary-color);
+
+  z-index: 5;
+
+}
+
+.person.active .share-image {
+  filter: invert(100%) sepia(0%) saturate(0%) brightness(1109%) contrast(1000%);
+
+}
+
+
+@media screen and (max-width: 350px) {
+  section .name {
+    color: var(--font-strong-color);
+    font-size: 4.6vmin;
+    font-weight: 700;
+    letter-spacing: 0.03rem;
+  
+    margin-bottom: 5px;
+  
+  }
+  
+  section .date {
+    color: var(--third-color);
+    font-size: 4vmin;
+    font-weight: 500;
+    letter-spacing: 0.04rem;
+  
+  }
+
+  .shareContainer .social-medias {
+    margin-right: 10px;
+
+  }
+
+}
